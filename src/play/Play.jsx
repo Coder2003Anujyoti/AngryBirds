@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import {HashLink} from 'react-router-hash-link'
 const Play = ({ player, computer }) => {
   const [imageIndexes, setImageIndexes] = useState([]);
   const [userValue, setUserValue] = useState(1);
@@ -181,15 +181,25 @@ let finalUsersValue=0;
       <div className="w-full flex justify-center items-center">
       <img src={playerindex==63?player:computer} className="w-24 rounded-md h-24 transition duration-300 ease-in-out transform hover:scale-105" />
       </div>
+       <div className="w-full mt-10 flex justify-center items-center gap-8">   
       <button
         onClick={()=>{
           window.location.reload()
         }
         }
-        className="mt-10 px-4 font-bold py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+        className="px-4 font-bold py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
       >
         Restart
       </button>
+            <HashLink smooth to="/">
+            <button
+        
+        className=" px-4 font-bold py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+      >
+        Go Back
+      </button>
+      </HashLink>
+      </div>
     </>
     }
 
